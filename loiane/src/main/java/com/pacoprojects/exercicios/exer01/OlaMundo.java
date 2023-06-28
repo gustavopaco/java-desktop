@@ -1,4 +1,4 @@
-package exercicios.exer01;
+package com.pacoprojects.exercicios.exer01;
 
 public class OlaMundo {
     public static void main(String[] args) {

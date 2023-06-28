@@ -1,4 +1,4 @@
-package aula02_parametros_metodo;
+package com.pacoprojects.aula02.parametros.metodos;
 
 public class Parametros {
     public static void main(String[] args) {
