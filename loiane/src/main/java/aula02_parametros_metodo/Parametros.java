@@ -1,4 +1,4 @@
-package parametros_metodo;
+package aula02_parametros_metodo;
 
 public class Parametros {
     public static void main(String[] args) {
