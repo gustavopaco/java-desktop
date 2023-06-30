@@ -1,4 +1,4 @@
-package com.pacoprojects.aula10.loop;
+package com.pacoprojects.aula10.loopwhile;
 
 public class WhileDoWhile {
     public static void main(String[] args) {
@@ -10,13 +10,13 @@ public class WhileDoWhile {
             i++;
         }
 
-        System.out.println("Finalizou loop...");
+        System.out.println("Finalizou loopwhile...");
         System.out.println("Valor de i apos sair do Loop While" + i);
         System.out.println("Iniciando Loop...");
         do {
             System.out.println("Valor de i: " + i);
             i++;
         } while (i < 15);
-        System.out.println("Finalizou loop");
+        System.out.println("Finalizou loopwhile");
     }
 }
