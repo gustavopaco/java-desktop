@@ -1,4 +1,4 @@
-package com.pacoprojects.exercicios.lista;
+package com.pacoprojects.exercicios.lista.aula11a13;
 
 import java.math.RoundingMode;
 import java.util.Scanner;

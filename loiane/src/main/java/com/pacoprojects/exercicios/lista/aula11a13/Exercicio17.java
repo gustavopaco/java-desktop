@@ -1,4 +1,4 @@
-package com.pacoprojects.exercicios.lista;
+package com.pacoprojects.exercicios.lista.aula11a13;
 
 import java.util.Scanner;
 
@@ -25,16 +25,16 @@ public class Exercicio17 {
         double resultadoTintaRestante = quantidadeLitrosNecessarios % litrosLata;
         double quantidadeGaloes = resultadoTintaRestante / litrosGalao;
 
-        System.out.println("\n- Quantidade de Tinta Restante: " + resultadoTintaRestante + " litros.");
-        System.out.println("- Quantidade de Galoes: " + quantidadeGaloes);
-
         if (quantidadeGaloes > 3) {
             quantidadeLatas++;
             double valorTotal = (int) Math.floor(quantidadeLatas) * valorLata;
-            System.out.println("\nSerao necessario " + (int) Math.floor(quantidadeLatas) + " latas de tinta de 18 litros. Com um valor total de R$ " + String.format("%.2f",valorTotal));
+            System.out.println("\nSerao necessario " + (int) quantidadeLatas + " latas de tinta de 18 litros. Com um valor total de R$ " + String.format("%.2f",valorTotal));
         } else {
             double valorTotal = ((int) Math.floor(quantidadeLatas) * valorLata) + ((int)Math.ceil(quantidadeGaloes) * valorGalao);
-            System.out.println("\nSerao necessario " + (int) Math.floor(quantidadeLatas) + " latas de tinta de 18 Litros e " + (int)Math.ceil(quantidadeGaloes) + " galões de tinta de 3,6 Litros. Somando um valor total de R$ " + String.format("%.2f",valorTotal));
+            System.out.println("\nSerao necessario " + (int) Math.floor(quantidadeLatas)
+                    + " latas de tinta de 18 Litros e " + (int)Math.ceil(quantidadeGaloes)
+                    + " galões de tinta de 3,6 Litros. Somando um valor total de R$ "
+                    + String.format("%.2f",valorTotal));
         }
     }
 }
