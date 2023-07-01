@@ -1,7 +1,5 @@
 package com.pacoprojects.exercicios.lista.aula16a17;
 
-import java.util.Scanner;
-
 public class Exercicio4 {
     public static void main(String[] args) {
 

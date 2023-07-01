@@ -1,6 +1,5 @@
 package com.pacoprojects.exercicios.lista.aula14a15;
 
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Exercicio23 {
