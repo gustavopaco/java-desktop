@@ -1,6 +1,6 @@
-package com.pacoprojects.aula16.oo;
+package com.pacoprojects.aula16.oo.declaracao;
 
-import com.pacoprojects.aula16.oo.model.Carro;
+import com.pacoprojects.aula16.oo.declaracao.model.Carro;
 
 public class Boot {
     public static void main(String[] args) {
