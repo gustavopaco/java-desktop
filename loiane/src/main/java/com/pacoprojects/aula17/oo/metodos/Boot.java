@@ -30,5 +30,9 @@ public class Boot {
         System.out.println("-------------");
         System.out.println("A autonomia do veículo " + van.modelo + " é " + van.obterAutonomia() + " km por litro.");
         System.out.println("A autonomia do veículo " + fusca.modelo + " é " + fusca.obterAutonomia() + " km por litro.");
+
+        System.out.println("-------------");
+        System.out.println("O veículo " + van.modelo + " para percorrer 1000 km gastaria " + String.format("%.2f", van.calculaCombustivel(1000)) + " litros");
+        System.out.println("O veículo " + fusca.modelo + " para percorrer 1000 km gastaria " + String.format("%.2f", fusca.calculaCombustivel(1000)) + " litros");
     }
 }

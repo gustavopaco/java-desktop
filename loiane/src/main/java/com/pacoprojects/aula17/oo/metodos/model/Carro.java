@@ -15,4 +15,8 @@ public class Carro {
         System.out.println("Método obter autonomia foi chamado!");
         return consumoCombustivel * capacidadeCombustivel;
     }
+
+    public double calculaCombustivel(double km) {
+        return km / consumoCombustivel;
+    }
 }
