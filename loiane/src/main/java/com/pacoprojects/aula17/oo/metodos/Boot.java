@@ -26,5 +26,9 @@ public class Boot {
 
         van.exibirAutonomia();
         fusca.exibirAutonomia();
+
+        System.out.println("-------------");
+        System.out.println("A autonomia do veículo " + van.modelo + " é " + van.obterAutonomia() + " km por litro.");
+        System.out.println("A autonomia do veículo " + fusca.modelo + " é " + fusca.obterAutonomia() + " km por litro.");
     }
 }
