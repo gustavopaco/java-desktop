@@ -8,7 +8,15 @@ public class Disciplina {
     public Professor professor;
     public List<Aluno> alunos = new ArrayList<>();
 
-    public void addAluno(Aluno aluno) {
+    public Disciplina(String nome) {
+        this.nome = nome;
+    }
+
+    public void associarAluno(Aluno aluno) {
         this.alunos.add(aluno);
+    }
+
+    public void associarProfessor(Professor professor) {
+        this.professor = professor;
     }
 }

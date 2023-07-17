@@ -7,17 +7,22 @@ public class TesteContaCorrente {
         ContaCorrente contaCorrente = new ContaCorrente();
         contaCorrente.numero = "123456";
         contaCorrente.agencia = "123";
-        contaCorrente.isEspecial = true;
+        contaCorrente.isEspecial = false;
         contaCorrente.banco = "Banco do Brasil";
         contaCorrente.titular = "Fulano da Silva";
         contaCorrente.limite = 90000;
         contaCorrente.saldo = 4000;
 
-        System.out.println(contaCorrente.consultarSaldo());
-        System.out.println(contaCorrente.isEspecial());
+        contaCorrente.consultarSaldo();
+        if (contaCorrente.isChequeEspecial() ) {
+            System.out.println("Você está usando o cheque especial");
+        } else {
+            System.out.println("Você não está utilizando o cheque especial");
+        }
         contaCorrente.depositar(8570);
-        System.out.println(contaCorrente.consultarSaldo());
+        System.out.println("Deposito realizado com sucesso.");
+        contaCorrente.consultarSaldo();
         contaCorrente.sacar(1500);
-        System.out.println(contaCorrente.consultarSaldo());
+        contaCorrente.consultarSaldo();
     }
 }

@@ -2,46 +2,49 @@ package com.pacoprojects.exercicios.lista.aula25a27;
 
 import com.pacoprojects.exercicios.lista.aula25a27.model.*;
 
-import java.util.List;
+import java.util.Scanner;
 
 public class TesteAlunos {
     public static void main(String[] args) {
         Aluno aluno = new Aluno();
-        aluno.nome = "Fulano";
-        aluno.cpf = "123456";
-        aluno.sobrenome = "da Silva";
-        aluno.curso = "Sistema de informação";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe o nome do aluno:");
+        aluno.nome = scanner.nextLine();
+        System.out.println("Informe o sobrenome do aluno:");
+        aluno.sobrenome = scanner.nextLine();
+        System.out.println("Informe o cpf do aluno:");
+        aluno.cpf = scanner.nextLine();
+        System.out.println("Informe o curso que o aluno está cursando:");
+        aluno.curso = scanner.nextLine();
 
-        Disciplina disciplina = new Disciplina();
-        disciplina.nome = "Lógica";
+        for (int i = 0; i < aluno.notasDisciplinaAlunos.length; i++) {
+            System.out.println("Informe o nome da disciplina: ");
+            String nomeDisciplina = scanner.nextLine();
 
-        Professor professor = new Professor();
-        professor.nome = "Professor Girafales";
-        professor.cpf = "987565621";
+            System.out.println("Informe o nome do professor: ");
+            String nomeProfessor = scanner.nextLine();
 
-        disciplina.professor = professor;
-        disciplina.addAluno(aluno);
+            Disciplina disciplina = new Disciplina(nomeDisciplina);
+            Professor professor = new Professor(nomeProfessor);
+            disciplina.associarAluno(aluno);
+            disciplina.associarProfessor(professor);
 
-        NotasDisciplinaAluno notasDisciplinaAluno = new NotasDisciplinaAluno();
-        notasDisciplinaAluno.disciplina = disciplina;
-        notasDisciplinaAluno.aluno = aluno;
+            NotasDisciplinaAluno notasDisciplinaAluno = new NotasDisciplinaAluno();
+            notasDisciplinaAluno.associarDisciplina(disciplina);
+            notasDisciplinaAluno.associarAluno(aluno);
 
-        Notas notas = new Notas();
-        notas.valor = 8;
-        Notas notas1 = new Notas();
-        notas1.valor = 7;
-        Notas notas2 = new Notas();
-        notas2.valor = 9;
-        Notas notas3 = new Notas();
-        notas3.valor = 6;
+            int contadorNotas = 0;
+            for (int j = 0; j < notasDisciplinaAluno.notas.length; j++) {
+                System.out.println("Informe o valor da nota " + (contadorNotas + 1) + ": ");
+                double nota = scanner.nextDouble();
+                scanner.nextLine();
+                Notas notas = new Notas(nota);
+                notasDisciplinaAluno.notas[j] = notas;
+                contadorNotas++;
+            }
+            aluno.notasDisciplinaAlunos[i] = notasDisciplinaAluno;
+        }
 
-        notasDisciplinaAluno.addNotas(notas);
-        notasDisciplinaAluno.addNotas(notas1);
-        notasDisciplinaAluno.addNotas(notas2);
-        notasDisciplinaAluno.addNotas(notas3);
-
-        aluno.addNotasDiscilina(notasDisciplinaAluno);
-
-        aluno.alunoAprovado("Lógica");
+        aluno.mostrarResultadosAluno();
     }
 }
