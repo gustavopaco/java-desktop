@@ -68,9 +68,9 @@ public class JogoDaVelha {
 
     public void imprimirTabuleiro() {
         System.out.println("Matriz:");
-        for (int i = 0; i < getMatrizJogo().length; i++) {
-            for (int j = 0; j < getMatrizJogo()[i].length; j++) {
-                System.out.print(getMatrizJogo()[i][j] + " | ");
+        for (int i = 0; i < this.getMatrizJogo().length; i++) {
+            for (int j = 0; j < this.getMatrizJogo()[i].length; j++) {
+                System.out.print(this.getMatrizJogo()[i][j] + " | ");
             }
             System.out.println();
         }
