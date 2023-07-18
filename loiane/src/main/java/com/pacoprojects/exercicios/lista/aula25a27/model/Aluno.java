@@ -9,19 +9,20 @@ public class Aluno {
     public NotasDisciplinaAluno[] notasDisciplinaAlunos = new NotasDisciplinaAluno[3];
 
     public void mostrarResultadosAluno() {
-        double media = 0;
-        int quantidadeNotas = 0;
+        double soma = 0;
         for (NotasDisciplinaAluno notasDisciplina : notasDisciplinaAlunos) {
                 System.out.println("Disciplina " + notasDisciplina.disciplina.nome + ": ");
                 System.out.print("Notas: ");
                 for (Notas nota : notasDisciplina.notas) {
                     System.out.print(nota.valor + " | ");
-                    media += nota.valor;
-                    quantidadeNotas++;
+                    soma += nota.valor;
                 }
                 System.out.println();
         }
-        media /= quantidadeNotas;
+    }
+
+    public void obterMedia(double soma) {
+        double media = soma / 4;
         if (media > 7) {
             System.out.println("Aluno Aprovado.");
         } else {

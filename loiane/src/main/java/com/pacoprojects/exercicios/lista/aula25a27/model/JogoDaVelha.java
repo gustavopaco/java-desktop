@@ -16,13 +16,6 @@ public class JogoDaVelha {
         return matrizJogo;
     }
 
-    public void setJogadaPosicaoLinhaColuna() {
-        if (this.matrizJogo[this.linha][this.coluna] != 'X' || this.matrizJogo[this.linha][this.coluna] != 'O') {
-            this.matrizJogo[this.linha][this.coluna] = this.sinal;
-            this.jogada++;
-        }
-    }
-
     public void exibirJogada() {
         if (jogada % 2 == 1) {
             System.out.println("Vez do jogador 1");
@@ -33,35 +26,53 @@ public class JogoDaVelha {
         }
     }
 
-    public void verificarGanhador() {
-        if ((matrizJogo[0][0] == 'X' && matrizJogo[0][1] == 'X' && matrizJogo[0][2] == 'X') || // Linha 0
-                (matrizJogo[1][0] == 'X' && matrizJogo[1][1] == 'X' && matrizJogo[1][2] == 'X') || // Linha 1
-                (matrizJogo[2][0] == 'X' && matrizJogo[2][1] == 'X' && matrizJogo[2][2] == 'X') || // Linha 2
-                (matrizJogo[0][0] == 'X' && matrizJogo[1][0] == 'X' && matrizJogo[2][0] == 'X') || // Coluna 0
-                (matrizJogo[0][1] == 'X' && matrizJogo[1][1] == 'X' && matrizJogo[2][1] == 'X') || // Coluna 1
-                (matrizJogo[0][2] == 'X' && matrizJogo[1][2] == 'X' && matrizJogo[2][2] == 'X') || // Coluna 2
-                (matrizJogo[0][0] == 'X' && matrizJogo[1][1] == 'X' && matrizJogo[2][2] == 'X')    // Diagonal
-        ) {
-            System.out.println("Jogador 1 ganhou");
-            this.ganhou = true;
-            this.ganhador = "Jogador 1";
-        } else if ((matrizJogo[0][0] == 'O' && matrizJogo[0][1] == 'O' && matrizJogo[0][2] == 'O') || // Linha 0
-                (matrizJogo[1][0] == 'O' && matrizJogo[1][1] == 'O' && matrizJogo[1][2] == 'O') || // Linha 1
-                (matrizJogo[2][0] == 'O' && matrizJogo[2][1] == 'O' && matrizJogo[2][2] == 'O') || // Linha 2
-                (matrizJogo[0][0] == 'O' && matrizJogo[1][0] == 'O' && matrizJogo[2][0] == 'O') || // Coluna 0
-                (matrizJogo[0][1] == 'O' && matrizJogo[1][1] == 'O' && matrizJogo[2][1] == 'O') || // Coluna 1
-                (matrizJogo[0][2] == 'O' && matrizJogo[1][2] == 'O' && matrizJogo[2][2] == 'O') || // Coluna 2
-                (matrizJogo[0][0] == 'O' && matrizJogo[1][1] == 'O' && matrizJogo[2][2] == 'O')    // Diagonal
-
-        ) {
-            System.out.println("Jogador 2 ganhou");
-            this.ganhou = true;
-            this.ganhador = "Jogador 2";
-        } else if (this.jogada >= 9) {
-            System.out.println("Ninguem ganhou a partida.");
-            this.ganhou = true;
+    public void setJogadaPosicaoLinhaColuna() {
+        if (this.matrizJogo[this.linha][this.coluna] != 'X' && this.matrizJogo[this.linha][this.coluna] != 'O') {
+            this.matrizJogo[this.linha][this.coluna] = this.sinal;
+            this.jogada++;
+        } else {
+            System.out.println("Jogada inválida, esta linha e coluna já foi marcada.");
         }
     }
 
+    public boolean verificarGanhador() {
+        if (isJogadorGanhou()) {
+            this.ganhou = true;
+            if (this.sinal == 'X') {
+                this.ganhador = this.nomeJogador1;
+            } else {
+                this.ganhador = this.nomeJogador2;
+            }
+            return true;
+        } else if (this.jogada > 9) {
+            this.ganhou = true;
+            return true;
+        }
+        return false;
+    }
 
+    private boolean isJogadorGanhou() {
+        if ((matrizJogo[0][0] == this.sinal && matrizJogo[0][1] == this.sinal && matrizJogo[0][2] == this.sinal) || // Linha 0
+                (matrizJogo[1][0] == this.sinal && matrizJogo[1][1] == this.sinal && matrizJogo[1][2] == this.sinal) || // Linha 1
+                (matrizJogo[2][0] == this.sinal && matrizJogo[2][1] == this.sinal && matrizJogo[2][2] == this.sinal) || // Linha 2
+                (matrizJogo[0][0] == this.sinal && matrizJogo[1][0] == this.sinal && matrizJogo[2][0] == this.sinal) || // Coluna 0
+                (matrizJogo[0][1] == this.sinal && matrizJogo[1][1] == this.sinal && matrizJogo[2][1] == this.sinal) || // Coluna 1
+                (matrizJogo[0][2] == this.sinal && matrizJogo[1][2] == this.sinal && matrizJogo[2][2] == this.sinal) || // Coluna 2
+                (matrizJogo[0][0] == this.sinal && matrizJogo[1][1] == this.sinal && matrizJogo[2][2] == this.sinal) || // Diagonal 1
+                (matrizJogo[2][0] == this.sinal && matrizJogo[1][1] == this.sinal && matrizJogo[0][2] == this.sinal)    // Diagonal 2
+        ) {
+            return true;
+        }
+        return false;
+    }
+
+    public void imprimirTabuleiro() {
+        System.out.println("Matriz:");
+        for (int i = 0; i < getMatrizJogo().length; i++) {
+            for (int j = 0; j < getMatrizJogo()[i].length; j++) {
+                System.out.print(getMatrizJogo()[i][j] + " | ");
+            }
+            System.out.println();
+        }
+    }
 }
