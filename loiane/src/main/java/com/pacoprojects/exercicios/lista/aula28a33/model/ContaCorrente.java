@@ -7,7 +7,7 @@ public class ContaCorrente {
     private double saldo;
     private boolean especial;
     private double limiteEspecial;
-    private double limiteUsado; 
+    private double limiteUsado;
 
     public String getAgencia() {
         return agencia;
@@ -37,16 +37,24 @@ public class ContaCorrente {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
+//    public void setSaldo(double saldo) {
+//        this.saldo = saldo;
+//    }
 
     public boolean isEspecial() {
         return especial;
     }
 
-    public void setEspecial(boolean especial) {
-        this.especial = especial;
+//    public void setEspecial(boolean especial) {
+//        this.especial = especial;
+//    }
+
+    public double getLimiteEspecial() {
+        return limiteEspecial;
+    }
+
+    public void setLimiteEspecial(double limiteEspecial) {
+        this.limiteEspecial = limiteEspecial;
     }
 
     public void sacar(double valor) {
@@ -59,7 +67,7 @@ public class ContaCorrente {
             System.out.println("Desculpe, saldo insuficiente para saque.");
         }
     }
-    
+
     private void debitarSaque(double valor) {
         this.saldo -= valor;
     }
@@ -77,8 +85,12 @@ public class ContaCorrente {
         }
     }
 
-    public double consultarSaldo() {
-        return this.getSaldo();
+    public void consultarSaldo() {
+        if (this.especial) {
+            System.out.println("O saldo da conta atual é " + this.saldo + " essa conta entrou em cheque especial");
+        } else {
+            System.out.println("O saldo da conta atual é: " + this.saldo);
+        }
     }
 
     public void verificarUsoChequeEspecial() {
