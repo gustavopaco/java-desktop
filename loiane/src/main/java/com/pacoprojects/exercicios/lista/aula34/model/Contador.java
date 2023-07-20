@@ -15,19 +15,19 @@ public class Contador {
         Contador.count = count;
     }
 
-    public void zerarContador() {
+    public static void zerarContador() {
         setCount(0);
     }
 
-    public void incrementarContador(int valor) {
+    public static void incrementarContador(int valor) {
         setCount(count + valor);
     }
 
-    public void decrementarContador(int valor) {
+    public static void decrementarContador(int valor) {
         setCount(count - valor);
     }
 
-    public void imprimirContador() {
+    public static void imprimirContador() {
         System.out.println("O valor do contador é: " + count);
     }
 }

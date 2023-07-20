@@ -8,7 +8,7 @@ public class BootCalculadora {
         System.out.println("A subtração de 2 - 2 = " + Calculadora.subtrair(2,2));
         System.out.println("A divisão de 10 por 5 = " + Calculadora.dividir(10,5));
         System.out.println("A potencia de 3 elevado a 3 = " + Calculadora.elevar(3,3));
-        System.out.print(Calculadora.fatorial(5));
+        System.out.print(Calculadora.fatorial(0));
         System.out.println();
 
         System.out.println("A conversão de 5 metros quadrados para pés quadrados é: " + Calculadora.converterMetroQuadradoParaPeQuadrado(5) + " pés quadrados");
