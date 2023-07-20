@@ -1,4 +1,4 @@
-package com.pacoprojects.aula34.staticminhacalculadora.model;
+package com.pacoprojects.aula34.oo.staticminhacalculadora.model;
 
 public class MinhaCalculadora {
     public static int soma (int num1, int num2) {
