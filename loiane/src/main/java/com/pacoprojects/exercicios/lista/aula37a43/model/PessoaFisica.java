@@ -50,13 +50,15 @@ public class PessoaFisica extends Contribuinte{
 
     private double obterValorImposto(double rendaBruta) {
         double valor = 0;
-        if (rendaBruta >= 1400.01 && rendaBruta <= 2100) {
+        if (rendaBruta <= 1400) {
+            valor = 0;
+        } else if (rendaBruta > 1400 && rendaBruta <= 2100) {
             valor = valorImposto(rendaBruta, 10, 100);
-        } else if (rendaBruta >= 2100.01 && rendaBruta <= 2800) {
+        } else if (rendaBruta > 2100 && rendaBruta <= 2800) {
             valor = valorImposto(rendaBruta, 15,270);
-        }  else if (rendaBruta >= 2800.01 && rendaBruta <= 3600) {
+        }  else if (rendaBruta > 2800 && rendaBruta <= 3600) {
             valor = valorImposto(rendaBruta, 25, 500);
-        } else if (rendaBruta >= 3600.01) {
+        } else {
             valor = valorImposto(rendaBruta, 30, 700);
         }
         return valor;
