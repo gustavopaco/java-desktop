@@ -50,6 +50,7 @@ public class ContaBancaria {
     public void sacar(double valor) {
         if (this.saldo >= valor) {
             this.saldo -= valor;
+            System.out.println("Saque efetuado com sucesso.");
         } else {
             System.out.println("Saldo insuficiente.");
         }

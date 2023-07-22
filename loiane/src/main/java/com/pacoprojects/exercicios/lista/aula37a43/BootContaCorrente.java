@@ -6,12 +6,17 @@ import com.pacoprojects.exercicios.lista.aula37a43.model.ContaPoupanca;
 public class BootContaCorrente {
     public static void main(String[] args) {
         ContaPoupanca contaPoupanca = new ContaPoupanca();
-        ContaEspecial contaEspecial = new ContaEspecial();
-
         contaPoupanca.setNumConta("12345");
-        contaPoupanca.setDiaRendimento("05");
+        contaPoupanca.setDiaRendimento(22);
         contaPoupanca.setNomeCliente("Fulano da Silva");
         contaPoupanca.setSaldo(1000);
+
+        System.out.println();
+        System.out.println("--------------");
+        System.out.println("Conta Poupança");
+        System.out.println("--------------");
+        System.out.println(contaPoupanca);
+        System.out.println("--------------");
 
         contaPoupanca.consultarSaldo();
         contaPoupanca.calcularNovoSaldo(1.5);
@@ -23,6 +28,8 @@ public class BootContaCorrente {
         contaPoupanca.sacar(2000);
         contaPoupanca.consultarSaldo();
 
+
+        ContaEspecial contaEspecial = new ContaEspecial();
         contaEspecial.setNumConta("98765");
         contaEspecial.setLimite(1000);
         contaEspecial.setNomeCliente("Beltrano");
@@ -30,10 +37,11 @@ public class BootContaCorrente {
 
         System.out.println();
         System.out.println("--------------");
-        System.out.println(contaPoupanca);
-
-        System.out.println();
+        System.out.println("Conta Especial");
         System.out.println("--------------");
+        System.out.println(contaEspecial);
+        System.out.println("--------------");
+
         contaEspecial.consultarSaldo();
         contaEspecial.depositar(800);
         contaEspecial.consultarSaldo();
@@ -45,9 +53,5 @@ public class BootContaCorrente {
         contaEspecial.consultarSaldo();
         contaEspecial.sacar(1);
         contaEspecial.consultarSaldo();
-
-        System.out.println();
-        System.out.println("--------------");
-        System.out.println(contaEspecial);
     }
 }

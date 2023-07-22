@@ -1,21 +1,23 @@
 package com.pacoprojects.exercicios.lista.aula37a43.model;
 
-public class ContaPoupanca extends ContaBancaria{
-    private String diaRendimento;
+import java.time.LocalDate;
+
+public class ContaPoupanca extends ContaBancaria {
+    private int diaRendimento;
 
     public ContaPoupanca() {
     }
 
-    public ContaPoupanca(String nomeCliente, String numConta, double saldo, String diaRendimento) {
+    public ContaPoupanca(String nomeCliente, String numConta, double saldo, int diaRendimento) {
         super(nomeCliente, numConta, saldo);
         this.diaRendimento = diaRendimento;
     }
 
-    public String getDiaRendimento() {
+    public int getDiaRendimento() {
         return diaRendimento;
     }
 
-    public void setDiaRendimento(String diaRendimento) {
+    public void setDiaRendimento(int diaRendimento) {
         this.diaRendimento = diaRendimento;
     }
 
@@ -27,6 +29,11 @@ public class ContaPoupanca extends ContaBancaria{
     }
 
     public void calcularNovoSaldo(double taxaRendimento) {
-        super.setSaldo(super.getSaldo() + (super.getSaldo() * (taxaRendimento / 100)));
+        if (LocalDate.now().getDayOfMonth() == this.diaRendimento) {
+            super.setSaldo(super.getSaldo() + (super.getSaldo() * (taxaRendimento / 100)));
+            System.out.println("Novo rendimento aplicado.");
+        } else {
+            System.out.println("Não é o dia de rendimento.");
+        }
     }
 }
