@@ -5,6 +5,7 @@ public abstract class Mamifero extends Animal{
     private String alimento;
 
     public Mamifero() {
+        setAmbiente("Terra");
     }
 
     public Mamifero(String nome, double comprimento, int numeroPatas, String cor, String ambiente, double velocidade, String alimento) {
@@ -21,14 +22,8 @@ public abstract class Mamifero extends Animal{
     }
 
     @Override
-    public String getAmbiente() {
-        super.setAmbiente("Terra");
-        return super.getAmbiente();
-    }
-
-    @Override
     public String toString() {
-        return super.toString() + ", Mamifero{}";
+        return super.toString();
     }
 
     @Override

@@ -71,14 +71,12 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "nome='" + nome + '\'' +
-                ", comprimento=" + comprimento +
-                ", numeroPatas=" + numeroPatas +
-                ", cor='" + cor + '\'' +
-                ", ambiente='" + ambiente + '\'' +
-                ", velocidade=" + velocidade +
-                '}';
+        return "Animal: " + this.getNome() +
+                "\nComprimento: " + (int) this.getComprimento() + " cm" +
+                "\nPatas: " + this.getNumeroPatas() +
+                "\nCor: " + this.getCor() +
+                "\nAmbiente: " + this.getAmbiente() +
+                "\nVelocidade: " + this.getVelocidade() + " m/s";
     }
 
     @Override

@@ -32,22 +32,8 @@ public class BootJardimZoologico {
         animals[2] = urso;
 
         for (int i = 0; i < animals.length; i++) {
-
-            System.out.println("Animal: " + animals[i].getNome());
-            System.out.println("Comprimento: " + (int) animals[i].getComprimento() + " cm");
-            System.out.println("Patas: " + animals[i].getNumeroPatas());
-            System.out.println("Cor: " + animals[i].getCor());
-            System.out.println("Ambiente: " + animals[i].getAmbiente());
-            System.out.println("Velocidade: " + animals[i].getVelocidade() + " m/s");
-
-            if (animals[i] instanceof Peixe) {
-                System.out.println("Características: " + ((Peixe) animals[i]).getCaracteristicas());
-            } else if (animals[i] instanceof Urso) {
-                System.out.println("Alimento: " + ((Urso) animals[i]).getAlimento());
-            }
+            System.out.println(animals[i].toString());
             System.out.println("-------------------");
         }
-
-
     }
 }

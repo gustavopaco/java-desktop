@@ -5,6 +5,10 @@ public class Peixe extends Animal{
     private String caracteristicas;
 
     public Peixe() {
+        super.setAmbiente("Mar");
+        super.setCor("Cinzento");
+        super.setNumeroPatas(0);
+        setCaracteristicas("Barbatanas e cauda");
     }
 
     public Peixe(String nome, double comprimento, int numeroPatas, String cor, String ambiente, double velocidade, String caracteristicas) {
@@ -13,7 +17,6 @@ public class Peixe extends Animal{
     }
 
     public String getCaracteristicas() {
-        setCaracteristicas("Barbatanas e cauda");
         return caracteristicas;
     }
 
@@ -22,19 +25,8 @@ public class Peixe extends Animal{
     }
 
     @Override
-    public int getNumeroPatas() {
-        return 0;
-    }
-
-    @Override
-    public String getAmbiente() {
-        super.setAmbiente("Mar");
-        return super.getAmbiente();
-    }
-
-    @Override
-    public String getCor() {
-        super.setCor("Cinzento");
-        return super.getCor();
+    public String toString() {
+        return super.toString() +
+                "\nCaracterística: " + this.getCaracteristicas();
     }
 }

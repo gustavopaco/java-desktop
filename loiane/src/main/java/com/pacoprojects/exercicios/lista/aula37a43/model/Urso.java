@@ -3,6 +3,8 @@ package com.pacoprojects.exercicios.lista.aula37a43.model;
 public class Urso extends Mamifero{
 
     public Urso() {
+        setCor("Castanho");
+        setAlimento("Mel");
     }
 
     public Urso(String nome, double comprimento, int numeroPatas, String cor, String ambiente, double velocidade, String alimento) {
@@ -10,7 +12,8 @@ public class Urso extends Mamifero{
     }
 
     @Override
-    public String getAlimento() {
-        return "Mel";
+    public String toString() {
+        return super.toString() +
+                "\nAlimento: " + this.getAlimento();
     }
 }
