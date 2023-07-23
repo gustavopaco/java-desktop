@@ -1,4 +1,4 @@
-package com.pacoprojects.aula50.exceptions.throwsstack;
+package com.pacoprojects.aula50.exception.throwsstack;
 
 import java.util.Scanner;
 

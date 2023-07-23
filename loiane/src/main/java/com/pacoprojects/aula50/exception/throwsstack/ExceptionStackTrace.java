@@ -1,4 +1,4 @@
-package com.pacoprojects.aula50.exceptions.throwsstack;
+package com.pacoprojects.aula50.exception.throwsstack;
 
 public class ExceptionStackTrace {
     public static void main(String[] args) {
