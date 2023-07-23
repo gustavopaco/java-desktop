@@ -1,6 +1,6 @@
 package com.pacoprojects.exercicios.lista.aula44a46.model;
 
-public class Quadrado extends Figura2D implements DimensaoSuperficial {
+public class Quadrado extends Figura2D {
 
     private int lado;
 
@@ -13,9 +13,13 @@ public class Quadrado extends Figura2D implements DimensaoSuperficial {
     }
 
     @Override
-    public void calcularArea() {
+    public double calcularArea() {
         // Área do Quadrado = lado * lado
-        int area = this.lado * this.lado;
-        System.out.println("Valor da área do quadrado é: " + area);
+        return this.lado * this.lado;
+    }
+
+    @Override
+    public void imprimirArea(double area) {
+        System.out.println("O valor da área do quadrado é: " + String.format("%.2f", area));
     }
 }

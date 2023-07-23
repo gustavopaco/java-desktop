@@ -11,19 +11,26 @@ public class Boot {
         Circulo circulo = new Circulo();
         Cilindro cilindro = new Cilindro();
 
+        quadrado.setNome("Quadrado");
         quadrado.setLado(5);
 
+        triangulo.setNome("Triângulo");
         triangulo.setBase(4);
         triangulo.setAltura(6);
 
+        piramide.setNome("Pirâmide");
         piramide.setLado(6);
-        piramide.setLado(3);
-        piramide.setAresta(10);
+        piramide.setAltura(5);
+        piramide.setApotema(10);
+        piramide.setBase(quadrado);
 
+        cubo.setNome("Cubo");
         cubo.setLado(7);
 
+        circulo.setNome("Círculo");
         circulo.setRaio(9);
 
+        cilindro.setNome("Cilindro");
         cilindro.setRaio(10);
         cilindro.setAltura(15);
 
@@ -36,13 +43,18 @@ public class Boot {
         figuraGeometricas[5] = cilindro;
 
         for (int i = 0; i < figuraGeometricas.length; i++) {
+            System.out.println();
+            System.out.println(figuraGeometricas[i].getNome());
             if (figuraGeometricas[i] instanceof DimensaoSuperficial) {
-                ((DimensaoSuperficial) figuraGeometricas[i]).calcularArea();
+                double area = ((DimensaoSuperficial) figuraGeometricas[i]).calcularArea();
+                ((DimensaoSuperficial) figuraGeometricas[i]).imprimirArea(area);
             }
 
             if (figuraGeometricas[i] instanceof DimensaoVolumetrica) {
-                ((DimensaoVolumetrica) figuraGeometricas[i]).calcularVolume();
+                double volume = ((DimensaoVolumetrica) figuraGeometricas[i]).calcularVolume();
+                ((DimensaoVolumetrica) figuraGeometricas[i]).imprimirVolume(volume);
             }
+            System.out.println("-----------------");
         }
     }
 }

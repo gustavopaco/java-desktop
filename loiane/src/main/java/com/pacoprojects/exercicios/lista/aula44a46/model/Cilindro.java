@@ -1,6 +1,6 @@
 package com.pacoprojects.exercicios.lista.aula44a46.model;
 
-public class Cilindro extends Figura3D implements DimensaoSuperficial, DimensaoVolumetrica {
+public class Cilindro extends Figura3D {
 
     private int raio;
     private int altura;
@@ -22,7 +22,7 @@ public class Cilindro extends Figura3D implements DimensaoSuperficial, DimensaoV
     }
 
     @Override
-    public void calcularArea() {
+    public double calcularArea() {
         // Área Total do Cilindro = 2 * Área da Base + Área Lateral
             // Área da Base = π * raio * raio
         double areaBase = Math.PI * this.raio * this.raio;
@@ -31,16 +31,24 @@ public class Cilindro extends Figura3D implements DimensaoSuperficial, DimensaoV
         double perimetroBase = 2 * Math.PI * this.raio;
         double areaLateral = perimetroBase * this.altura;
 
-        double areaTotal = (2 * areaBase) + areaLateral;
-        System.out.println("O valor da área do cilindro é: " + String.format("%.2f", areaTotal));
+        return (2 * areaBase) + areaLateral;
     }
 
     @Override
-    public void calcularVolume() {
+    public double calcularVolume() {
         // Volume do Cilindro = Área da Base * Altura
             // Área da Base = π * raio * raio
         double areaBase = Math.PI * this.raio * this.raio;
-        double volume = areaBase * this.altura;
+        return areaBase * this.altura;
+    }
+
+    @Override
+    public void imprimirArea(double area) {
+        System.out.println("O valor da área do cilindro é: " + String.format("%.2f", area));
+    }
+
+    @Override
+    public void imprimirVolume(double volume) {
         System.out.println("O valor do volume do cilindro é de: " + String.format("%.2f", volume));
     }
 }

@@ -1,6 +1,6 @@
 package com.pacoprojects.exercicios.lista.aula44a46.model;
 
-public class Circulo extends Figura2D implements DimensaoSuperficial {
+public class Circulo extends Figura2D {
 
     private int raio;
 
@@ -13,9 +13,13 @@ public class Circulo extends Figura2D implements DimensaoSuperficial {
     }
 
     @Override
-    public void calcularArea() {
+    public double calcularArea() {
         // Área do Círculo = π * raio * raio
-        double area = Math.PI * this.raio * this.raio;
+        return Math.PI * this.raio * this.raio;
+    }
+
+    @Override
+    public void imprimirArea(double area) {
         System.out.println("O valor da area do circulo é de: " + String.format("%.2f", area));
     }
 }

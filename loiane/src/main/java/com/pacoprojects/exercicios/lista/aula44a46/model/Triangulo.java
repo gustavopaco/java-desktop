@@ -1,6 +1,6 @@
 package com.pacoprojects.exercicios.lista.aula44a46.model;
 
-public class Triangulo extends Figura2D implements DimensaoSuperficial {
+public class Triangulo extends Figura2D {
 
     private int base;
     private int altura;
@@ -22,9 +22,13 @@ public class Triangulo extends Figura2D implements DimensaoSuperficial {
     }
 
     @Override
-    public void calcularArea() {
+    public double calcularArea() {
         // Área do Triângulo = (base * altura) / 2
-        int area = (this.base * this.altura) / 2;
-        System.out.println("O valor da área do triângulo é: " + area);
+        return (double) (this.base * this.altura) / 2;
+    }
+
+    @Override
+    public void imprimirArea(double area) {
+        System.out.println("O valor da área do triângulo é: " + String.format("%.2f", area));
     }
 }
