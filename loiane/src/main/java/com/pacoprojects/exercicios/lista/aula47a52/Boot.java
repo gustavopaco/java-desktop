@@ -22,9 +22,7 @@ public class Boot {
                 } else if (opcaoAgenda == 2 && agenda.getContatos().size() > 2) {
                     throw new AgendaCheiaException();
                 } else if (opcaoAgenda == 2) {
-                    Contato contato = new Contato();
-                    contato.setNome(input("Nome do contato:"));
-                    cadastrarNovoTelefone(contato);
+                    Contato contato = cadastrarContato();
                     agenda.adicionarContato(contato);
                 } else {
                     break;
@@ -56,14 +54,15 @@ public class Boot {
             System.out.println("'0' - Sair do sistema");
             try {
                 opcaoEscolhida = scanner.nextInt();
+                if (opcaoEscolhida == 0 || opcaoEscolhida == 1 || opcaoEscolhida == 2) {
+                    valorValido = true;
+                } else {
+                    throw new Exception();
+                }
             } catch (Exception e) {
                 System.out.println("Opção inválida, escolha entre ('0', '1' e '2').");
             }
             scanner.nextLine();
-
-            if (opcaoEscolhida == 0 || opcaoEscolhida == 1 || opcaoEscolhida == 2) {
-                valorValido = true;
-            }
         }
         return opcaoEscolhida;
     }
@@ -71,6 +70,13 @@ public class Boot {
     private static String input(String mensagem) {
         System.out.println(mensagem);
         return scanner.nextLine();
+    }
+
+    private static Contato cadastrarContato() {
+        Contato contato = new Contato();
+        contato.setNome(input("Nome do contato:"));
+        cadastrarNovoTelefone(contato);
+        return contato;
     }
 
     private static void cadastrarNovoTelefone(Contato contato) {

@@ -7,7 +7,7 @@ public class Contato {
 
     private final Long id;
     private String nome;
-    private List<Telefone> telefones;
+    private final List<Telefone> telefones;
     private static long CONTADOR;
 
     public Contato() {
@@ -26,14 +26,6 @@ public class Contato {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public List<Telefone> getTelefones() {
-        return telefones;
-    }
-
-    public void setTelefones(List<Telefone> telefones) {
-        this.telefones = telefones;
     }
 
     public void adicionarTelefone(Telefone telefone) {
