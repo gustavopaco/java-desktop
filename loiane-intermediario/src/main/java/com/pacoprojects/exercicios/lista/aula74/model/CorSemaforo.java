@@ -1,7 +1,17 @@
 package main.java.com.pacoprojects.exercicios.lista.aula74.model;
 
 public enum CorSemaforo {
-    VERDE,
-    AMARELO,
-    VERMELHO
+    VERDE(1000),
+    AMARELO(300),
+    VERMELHO(2000);
+
+    private int tempoEspera;
+
+    CorSemaforo(int tempoEspera) {
+        this.tempoEspera = tempoEspera;
+    }
+
+    public int getTempoEspera() {
+        return tempoEspera;
+    }
 }
