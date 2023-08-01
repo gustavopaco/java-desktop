@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula83.strings.metodos.builderbuffer;
+package main.java.com.pacoprojects.aula83.strings.builderbuffer;
 
 public class Boot {
     public static void main(String[] args) {
