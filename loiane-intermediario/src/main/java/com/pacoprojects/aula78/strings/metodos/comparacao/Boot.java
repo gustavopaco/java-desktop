@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula78.strings.comparacao;
+package main.java.com.pacoprojects.aula78.strings.metodos.comparacao;
 
 public class Boot {
     public static void main(String[] args) {

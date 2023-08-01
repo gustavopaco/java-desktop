@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula79.strings.metodosbusca;
+package main.java.com.pacoprojects.aula79.strings.metodos.busca;
 
 public class Boot {
     public static void main(String[] args) {
