@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula94.util.resourcebundle;
+package main.java.com.pacoprojects.aula95.util.resourcebundle;
 
 import java.util.Arrays;
 import java.util.Locale;

@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula95.util.formatar.numeros;
+package main.java.com.pacoprojects.aula96.util.formatar.numeros.numberformat;
 
 import java.math.RoundingMode;
 import java.text.NumberFormat;

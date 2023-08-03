@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula97.util.bigdecimal.bignumber;
+package main.java.com.pacoprojects.aula98.util.bigdecimal.bignumber;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

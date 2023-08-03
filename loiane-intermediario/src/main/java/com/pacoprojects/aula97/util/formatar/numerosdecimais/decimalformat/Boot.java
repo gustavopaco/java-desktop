@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula96.util.formatar.numeros.decimais;
+package main.java.com.pacoprojects.aula97.util.formatar.numerosdecimais.decimalformat;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

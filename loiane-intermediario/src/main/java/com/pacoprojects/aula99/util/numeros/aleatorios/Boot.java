@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.aula98.util.numeros.aleatorios;
+package main.java.com.pacoprojects.aula99.util.numeros.aleatorios;
 
 import java.util.Random;
 
