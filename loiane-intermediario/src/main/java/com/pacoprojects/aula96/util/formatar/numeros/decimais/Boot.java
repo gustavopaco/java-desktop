@@ -14,25 +14,32 @@ public class Boot {
         String padrao5 = "\u00A4###,###,##0.00";  // ¤ Mostra o simbolo monetario do locale
 
 
+        // Note: Recebe uma instancia do DecimalFormat ja passando o padrao no seu construtor
         DecimalFormat df = new DecimalFormat(padrao);
-        //   df.applyPattern(padrao);
-        System.out.println(df.format(1234567890.12235));
+//        df.applyPattern(padrao);      // Define um novo padrao caso nao queira passar no construtor
+        // Note: format() -> Formata um numero a partir do PADRAO
+        System.out.println("VALOR_FORMATO_EN_US: " + df.format(1234567890.12235));
 
+        // Note: Recebe uma instancia de DecimalFormatSymbols passando um novo Locale
         DecimalFormatSymbols dfs = new DecimalFormatSymbols(new Locale("pt","BR"));
-        dfs.setDecimalSeparator(',');
-        dfs.setGroupingSeparator('.');
+//        dfs.setDecimalSeparator(',');     // Define manualmente separador decimal, caso nao queira usar o Locale
+//        dfs.setGroupingSeparator('.');    // Define manualmente separador milhar, caso nao queira usar o Locale
+//        df.setDecimalFormatSymbols(dfs);  // Define novo formatador de simbolos
 
-        // df.setDecimalFormatSymbols(dfs);
+        // Note: Recebe uma instancia de DecimalFormat passando no construtor o PADRAO E o LOCALE dos Simbolos
         df = new DecimalFormat(padrao, dfs);
-        System.out.println(df.format(1234567890.12235));
+        System.out.println("VALOR_FORMATO_PT_BR: " + df.format(1234567890.12235));
 
+        // Note: Recebe uma instancia de DecimalFormat passando no construtor o PADRAO E o LOCALE dos Simbolos
         df = new DecimalFormat(padrao3, dfs);
-        System.out.println(df.format(1234567890.12235));
+        System.out.println("VALOR_FORMATO_PT_BR_4MILHAR: " + df.format(1234567890.12235));
 
+        // Note: Recebe uma instancia de DecimalFormat passando no construtor o PADRAO E o LOCALE dos Simbolos
         df = new DecimalFormat(padrao4, dfs);
-        System.out.println(df.format(1234567890.1));
+        System.out.println("VALOR_FORMATO_PT_BR_CASAS_OBRIGATORIAS: " + df.format(1234567890.1));
 
+        // Note: Recebe uma instancia de DecimalFormat passando no construtor o PADRAO E o LOCALE dos Simbolos
         df = new DecimalFormat(padrao5, dfs);
-        System.out.println(df.format(1234567890.12235));
+        System.out.println("VALOR_FORMATO_PT_BR_MONETARIO: " + df.format(1234567890.12235));
     }
 }
