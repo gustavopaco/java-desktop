@@ -1,4 +1,6 @@
-package main.java.com.pacoprojects.com.aula03.vetor.adicionar.elemento.model;
+package main.java.com.pacoprojects.com.aula04.vetor.verificar.tamanho.imprimir.model;
+
+import java.util.Arrays;
 
 public class Vetor {
     private String[] elementos;
@@ -34,5 +36,25 @@ public class Vetor {
         } else {
             return false;
         }
+    }
+
+    public int tamanho() {
+        return this.tamanhoReal;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+        for (String elemento : this.elementos) {
+            if (elemento != null) {
+                builder.append(elemento).append(", ");
+            } else {
+                break;
+            }
+        }
+        builder.delete(builder.length() -2, builder.length());
+        builder.append("]");
+        return builder.toString();
     }
 }
