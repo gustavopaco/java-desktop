@@ -3,6 +3,7 @@ package main.java.com.pacoprojects.com.exercicios.pilha.exercicio05;
 import main.java.com.pacoprojects.com.exercicios.pilha.util.FuncoesUteis;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Exer05 {
     // 0 1 2 3 4 5 6 7 8
@@ -16,13 +17,8 @@ public class Exer05 {
         Scanner scanner = new Scanner(System.in);
         String palavraEscolhida = FuncoesUteis.lerValorString("Informe uma palavra para verificar se é ou não um palíndromo: ", scanner);
 
-        boolean isPalimdromo = true;
-        for (int i = 0, j = palavraEscolhida.length() - 1; i < (palavraEscolhida.toCharArray().length / 2); i++, j--) {
-            if (palavraEscolhida.toCharArray()[i] != palavraEscolhida.toCharArray()[j]) {
-                isPalimdromo = false;
-                break;
-            }
-        }
+        boolean isPalimdromo = compararPalindromoArrayOtimizado(palavraEscolhida);
+
 
         if (isPalimdromo) {
             System.out.println("Palavra: " + palavraEscolhida + " é considerada um palíndromo");
@@ -31,9 +27,34 @@ public class Exer05 {
         }
 
     }
-    private static boolean compararPalindromoStringBuilder(String valor) {
+    private static boolean compararPalindromoStringBuilder(String palavra) {
         StringBuilder builder = new StringBuilder();
-        builder.append(valor);
+        builder.append(palavra);
         return builder.toString().equals(builder.reverse().toString());
+    }
+
+    private static boolean compararPalindromoArrayOtimizado(String palavra) {
+        boolean isPalimdromo = true;
+        for (int i = 0, j = palavra.length() - 1; i < (palavra.toCharArray().length / 2); i++, j--) {
+            if (palavra.toCharArray()[i] != palavra.toCharArray()[j]) {
+                isPalimdromo = false;
+                break;
+            }
+        }
+        return isPalimdromo;
+    }
+
+    private static boolean compararPalindromoStack(String palavra) {
+        Stack<Character> pilha = new Stack<>();
+
+        for (int i = 0; i < palavra.length(); i++) {
+            pilha.push(palavra.charAt(i));
+        }
+
+        StringBuilder builder = new StringBuilder();
+        while (!pilha.isEmpty()) {
+            builder.append(pilha.pop());
+        }
+        return palavra.equals(builder.toString());
     }
 }
