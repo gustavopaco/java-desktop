@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.com.aula13.pilha.criacao.model;
+package main.java.com.pacoprojects.com.aula14.pilha.empilhar.elemento.model;
 
 public class Lista<T> extends EstruturaEstatica<T> {
     public Lista(int capacidade) {
