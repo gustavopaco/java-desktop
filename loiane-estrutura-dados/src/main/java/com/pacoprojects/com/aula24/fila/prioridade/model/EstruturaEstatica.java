@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.com.aula21.fila.espiar.model;
+package main.java.com.pacoprojects.com.aula24.fila.prioridade.model;
 
 import java.lang.reflect.Array;
 

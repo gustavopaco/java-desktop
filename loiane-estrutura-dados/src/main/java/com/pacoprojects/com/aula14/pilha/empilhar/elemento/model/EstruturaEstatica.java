@@ -64,7 +64,7 @@ public abstract class EstruturaEstatica<T> {
     }
 
     protected void validarPosicao(int posicao) throws IllegalArgumentException {
-        if (posicao < 0 || posicao >= this.tamanho) {
+        if (posicao < 0 || posicao > this.tamanho) {
             throw new IllegalArgumentException("Posição inválida");
         }
     }
