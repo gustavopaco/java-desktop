@@ -1,5 +1,7 @@
 package main.java.com.pacoprojects.com.aula30.lista.encadeada.limparlista.model;
 
+import java.util.Objects;
+
 public class No<T> {
     private T elemento;
     private No<T> proximo;
@@ -37,5 +39,17 @@ public class No<T> {
         sb.append(", proximo=").append(proximo);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof No<?> no)) return false;
+        return Objects.equals(getElemento(), no.getElemento()) && Objects.equals(getProximo(), no.getProximo());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getElemento(), getProximo());
     }
 }

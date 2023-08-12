@@ -19,17 +19,6 @@ public class ListaEncadeada<T> {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ListaEncadeada{");
-        sb.append("inicio=").append(inicio);
-        sb.append('}');
-        return sb.toString();
-    }
-
-    public int getTamanho() {
-        return tamanho;
-    }
-
-    public void imprimirElementos() {
         No<T> celula = this.inicio;
         StringBuilder builder = new StringBuilder();
         builder.append("[");
@@ -41,7 +30,11 @@ public class ListaEncadeada<T> {
             builder.delete(builder.length() - 2, builder.length());
         }
         builder.append("]");
-        System.out.println(builder);
+        return builder.toString();
+    }
+
+    public int getTamanho() {
+        return tamanho;
     }
 
     public void limpar() {

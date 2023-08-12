@@ -9,10 +9,11 @@ public class Boot {
         listaEncadeada.adiciona(1);
         listaEncadeada.adiciona(2);
         listaEncadeada.adiciona(3);
+        listaEncadeada.adiciona(4);
 
         System.out.println("toString => " + listaEncadeada);
         System.out.println("Tamanho: " + listaEncadeada.getTamanho());
-        listaEncadeada.imprimirElementos();
+        System.out.println("toString => " + listaEncadeada);
         System.out.println();
 
         listaEncadeada.limpar();
