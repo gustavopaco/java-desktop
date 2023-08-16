@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.com.aula33.lista.encadeada.existe.vazia.model;
+package main.java.com.pacoprojects.com.aula34.lista.encadeada.busca.model;
 
 public class ListaEncadeada<T> {
 
@@ -131,5 +131,22 @@ public class ListaEncadeada<T> {
             cont++;
         }
         return -1;
+    }
+
+    public T busca(int posicao) throws IllegalArgumentException {
+        if (!estaVazio()) {
+            if (posicao < 0 || posicao >= this.tamanho) {
+                throw new IllegalArgumentException("Posição inválida.");
+            }
+
+            No<T> temp = this.inicio;
+            for (int i = 0; i <= posicao; i++) {
+                if (i == posicao) {
+                    return temp.getElemento();
+                }
+                temp = temp.getProximo();
+            }
+        }
+        return null;
     }
 }

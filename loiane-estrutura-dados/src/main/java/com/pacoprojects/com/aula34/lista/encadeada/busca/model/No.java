@@ -1,4 +1,4 @@
-package main.java.com.pacoprojects.com.aula33.lista.encadeada.existe.vazia.model;
+package main.java.com.pacoprojects.com.aula34.lista.encadeada.busca.model;
 
 import java.util.Objects;
 
