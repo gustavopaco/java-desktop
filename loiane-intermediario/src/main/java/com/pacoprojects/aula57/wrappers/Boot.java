@@ -11,7 +11,7 @@ public class Boot {
         boolean flag = true;
         char a = 'a';
 
-        // Note: Declaracao de classes depreciadas
+        // Note: Declaracao de model depreciadas
         //Short num7 = new Short((short) 1);
         //Byte num8 = new Byte((byte) 10);
         //Integer num9 = new Integer(100);

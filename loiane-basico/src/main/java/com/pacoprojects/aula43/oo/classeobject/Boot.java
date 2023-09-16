@@ -20,8 +20,8 @@ public class Boot {
         Aluno aluno2 = new Aluno();
         String[] curso2 = {"Sistemas de informacao"};
         double[] notas2 = {10, 9, 8, 9};
-        aluno2.setCursos(curso);
-        aluno2.setNotas(notas);
+        aluno2.setCursos(curso2);
+        aluno2.setNotas(notas2);
 
         System.out.println(aluno.equals(aluno2));
     }
